@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
         title: 'LDSW 3.4 Utilizacion de widgets',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color.fromARGB(255, 236, 97, 107)),
         ),
         home: MyHomePage(),
       ),

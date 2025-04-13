@@ -1,22 +1,52 @@
 import 'package:flutter/material.dart';
-import '../widgets/custom_title.dart';
+import '../widgets/custom_text.dart';
+import '../widgets/custom_container.dart';
+import '../widgets/custom_row.dart';
+import '../widgets/custom_column.dart';
+import '../widgets/custom_stack.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var mainTitle = "Welcome to Flutter";
-    var mainText = "Hello World";
-    
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: CustomColumn(
         children: [
-          CustomTitle(text: mainTitle),
-          Text(mainText),
+          // Demo of CustomText
+          const CustomText(
+            text: 'CustomText Widget',
+          ),
+
+          // Demo of CustomContainer
+          const CustomContainer(
+            child: CustomText(
+              text: 'CustomContainer with CustomText',
+            ),
+          ),
+
+          // Demo of CustomRow
+          CustomRow(
+            children: [
+              Expanded(child: Container(height: 50, color: Colors.red)),
+              Expanded(child: Container(height: 50, color: Colors.green)),
+              Expanded(child: Container(height: 50, color: Colors.blue)),
+            ],
+          ),
+
+          // Demo of CustomStack
+          CustomStack(
+            children: [
+              Container(width: 200, height: 200, color: Colors.red),
+              Container(width: 150, height: 150, color: Colors.green),
+              Container(width: 100, height: 100, color: Colors.blue),
+              const CustomText(
+                text: 'CustomStack',
+              ),
+            ],
+          ),
         ],
       ),
     );
   }
-} 
+}
