@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'screens/home_page.dart';
+import 'screens/home_screen.dart';
 import 'providers/app_state.dart';
+import 'theme/app_text_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,16 +13,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = AppTextTheme.textTheme;
+
     return ChangeNotifierProvider(
       create: (context) => MyAppState(),
       child: MaterialApp(
-        title: 'LDSW 3.4 Utilizacion de widgets',
+        title: 'Generic Pokedex App',
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
-              seedColor: const Color.fromARGB(255, 236, 97, 107)),
+            seedColor: const Color.fromARGB(255, 102, 255, 0),
+          ),
+          textTheme: textTheme,
         ),
-        home: MyHomePage(),
+        home: const HomeScreen(),
       ),
     );
   }

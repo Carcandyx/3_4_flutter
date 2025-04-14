@@ -13,19 +13,14 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       body: CustomColumn(
         children: [
-          // Demo of CustomText
           const CustomText(
             text: 'CustomText Widget',
           ),
-
-          // Demo of CustomContainer
           const CustomContainer(
             child: CustomText(
               text: 'CustomContainer with CustomText',
             ),
           ),
-
-          // Demo of CustomRow
           CustomRow(
             children: [
               Expanded(child: Container(height: 50, color: Colors.red)),
@@ -33,8 +28,6 @@ class MyHomePage extends StatelessWidget {
               Expanded(child: Container(height: 50, color: Colors.blue)),
             ],
           ),
-
-          // Demo of CustomStack
           CustomStack(
             children: [
               Container(width: 200, height: 200, color: Colors.red),
