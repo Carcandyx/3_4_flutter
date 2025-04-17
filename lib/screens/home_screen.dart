@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../widgets/custom_column.dart';
-import '../widgets/styled_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -15,21 +14,19 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: CustomColumn(
           children: [
-            const StyledText(
-              'Generic Pokedex App',
-              styleType: TextStyleType.displayLarge,
+            Text(
+              'Catálogo De Películas APP',
+              style: Theme.of(context).textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
             Center(
-              child: Icon(
-                Icons.catching_pokemon_rounded,
-                size: widerSide / 4,
-                color: Color.fromARGB(255, 223, 19, 19),
-              ),
+              child: Icon(Icons.theaters_rounded,
+                  size: widerSide / 4,
+                  color: Theme.of(context).colorScheme.primary),
             ),
-            const StyledText(
-              'Bienvenido a Generic Pokedex App',
-              styleType: TextStyleType.headlineLarge,
+            Text(
+              'Bienvenido a nuestro catálogo de películas',
+              style: Theme.of(context).textTheme.headlineLarge,
               textAlign: TextAlign.center,
             ),
           ],
