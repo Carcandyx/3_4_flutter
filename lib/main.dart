@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'screens/home_screen.dart';
-import 'providers/app_state.dart';
+import 'screens/catalog/catalog_screen.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => MyAppState(),
-      child: MaterialApp(
-        title: 'Generic Pokedex App',
-        theme: ThemeData(
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 123, 2, 167),
-          ),
-        ),
-        home: const HomeScreen(),
-      ),
+    return MaterialApp(
+      title: 'Catálogo Películas',
+      theme: ThemeData.dark(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/catalog': (context) => const CatalogScreen()
+      },
     );
   }
 }

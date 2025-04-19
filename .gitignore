@@ -58,7 +58,6 @@ coverage/
 *.mocks.dart
 
 # Web related
-lib/generated_plugin_registrant.dart
 
 # Environment variables and secrets
 .env
